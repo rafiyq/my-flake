@@ -10,6 +10,7 @@
     wayland.url = "github:colemickens/nixpkgs-wayland";
     wayland.inputs.nixpkgs.follows = "cmpkgs";
     wayland.inputs.master.follows = "master";
+  };
 
   outputs = { self, stable, unstable, home, wayland }: {
 
