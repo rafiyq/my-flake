@@ -14,7 +14,7 @@
 
   outputs = { self, stable, unstable, home, wayland }: {
 
-    nixosConfigurations.container = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.container = stable.lib.nixosSystem {
       system = "x86_64-linux";
       modules =
         [ ({ pkgs, ... }: {
