@@ -8,8 +8,7 @@
     home.inputs.nixpkgs.follows = "stable";
 
     wayland.url = "github:colemickens/nixpkgs-wayland";
-    wayland.inputs.nixpkgs.follows = "cmpkgs";
-    wayland.inputs.master.follows = "master";
+    wayland.inputs.nixpkgs.follows = "stable";
   };
 
   outputs = { self, stable, unstable, home, wayland }: {
