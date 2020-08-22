@@ -27,20 +27,27 @@
     };
   };
 
-  networking = {
-    hostName = "thinkpad-x220";
-    networkmanager.enable = true;
-  };
-
   nix.maxJobs = lib.mkDefault 4;
-  nixpkgs.config.allowUnfree = true;
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
+
+  nixpkgs.config.allowUnfree = true;
+  nix = {
+    package = pkgs.unstable.nixFlakes;
+    extraOptions = " experimental-features = nix-command flakes";
+  };
 
   hardware = {
     bluetooth.enable = true;
-    pulseaudio.package = pkgs.pulseaudioFull;
     enableRedistributableFirmware = true;
     cpu.intel.updateMicrocode = true;
+  };
+
+  i18n.defaultLocale = "en_GB.UTF-8";
+  console.font = "Lat2-Terminus16";
+
+  networking = {
+    hostName = "thinkpad-x220";
+    networkmanager.enable = true;
   };
 
 }
