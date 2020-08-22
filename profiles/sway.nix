@@ -5,8 +5,6 @@
 { config, pkgs, ... }:
 
 {
-  nixpkgs.overlays = [ inputs.wayland.overlay ];
-
   hardware.opengl = {
     enable = true;
     extraPackages = with pkgs; [
@@ -28,10 +26,10 @@
   };
 
   services.pcscd.enable = true;
-  services.udiskie.enable = true;
+  #services.udiskie.enable = true;
   
-  program.sway.enable = true;
-  program.sway.extraPackages = [];
+  programs.sway.enable = true;
+  programs.sway.extraPackages = [];
   
   environment.systemPackages = with pkgs; [
     vanilla-dmz
@@ -91,7 +89,7 @@
       iconTheme = { name = "Numix"; package = pkgs.numix-icon-theme; };
       # cursorTheme = { name = "Vanilla-DMZ"; package = pkgs.vanilla-dmz; };
       theme = { name = "Arch-Dark"; package = pkgs.arc-theme; };
-      gtk.extraConfig = {
+      gtk3.extraConfig = {
         # gtk-cursor-theme-size = 0;
         gtk-xft-antialias = 1;
         gtk-xft-hinting = 1;

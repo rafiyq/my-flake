@@ -1,7 +1,7 @@
 { pkgs, ...}:
 
 {
-  import = [
+  imports = [
     ./git.nix
     ./tmux.nix
     ./vim.nix

@@ -2,10 +2,10 @@
 
 {
   config = {
-    home-manager.users.rafiyq = { pkgs, ..}: {
+    home-manager.users.rafiyq = { pkgs, ...}: {
       programs.vim = {
         enable = true;
-        setting = {
+        settings = {
           expandtab = true;
           number = true;
           shiftwidth = 2;

@@ -18,7 +18,11 @@
     nixosConfigurations.container = stable.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [ 
+        {
+          nixpkgs.overlays = [ wayland.overlay ];
+        }
         stable.nixosModules.notDetected
+        home-manager.nixosModules.home-manager
         ./thinkpad-x220.nix
         ./configuration.nix
         ./modules/home.nix

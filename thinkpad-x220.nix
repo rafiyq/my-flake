@@ -20,7 +20,7 @@
     initrd.kernelModules = [ ];
     kernelModules = [ "kvm-intel" ];
     extraModulePackages = [ ];
-    boot.loader.grub = {
+    loader.grub = {
       enable = true;
       version = 2;
       device = "/dev/sda";
@@ -32,7 +32,7 @@
 
   nixpkgs.config.allowUnfree = true;
   nix = {
-    package = pkgs.unstable.nixFlakes;
+    package = pkgs.nixUnstable;
     extraOptions = " experimental-features = nix-command flakes";
   };
 

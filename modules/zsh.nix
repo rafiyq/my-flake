@@ -2,11 +2,11 @@
 
 {
   config = {
-    home-manager.users.rafiyq = { pkgs, ..}: {
+    home-manager.users.rafiyq = { pkgs, ...}: {
       programs.zsh = {
         enable = true;
 	autocd = true;
-	defaultKeyma= "emacs";
+	defaultKeymap= "emacs";
         dotDir = ".config/zsh";
 	enableAutosuggestions = true;
 	enableCompletion = true;
@@ -18,15 +18,15 @@
 
 	localVariables = {
 	  PROMPT = "%B%F{171}%n%F{135}@%F{99}%M%b %F{81}%~ %f%# ";
-	  RPROMPT = \$vcs_info_msg_0_ ;
+	 # RPROMPT = \$vcs_info_msg_0_ ;
 	};
 
 	shellAliases = {
-	  ls = "ls --color=auto"
-	  ll = "ls -AlFH"
-	  grep = "grep --color=auto"
-	  fgrep = "fgrep --color=auto"
-	  egrep = "egrep --color=auto"
+	  ls = "ls --color=auto";
+	  ll = "ls -AlFH";
+	  grep = "grep --color=auto";
+	  fgrep = "fgrep --color=auto";
+	  egrep = "egrep --color=auto";
 	};
       };
     };

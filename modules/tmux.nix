@@ -2,7 +2,7 @@
 
 {
   config = {
-    home-manager.users.rafiyq = { pkgs, ..}: {
+    home-manager.users.rafiyq = { pkgs, ...}: {
       programs.tmux = {
         enable = true;
         
