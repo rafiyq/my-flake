@@ -18,6 +18,7 @@
       modules = [ 
         ./thinkpad-x220.nix
         ./configuration.nix
+        ./modules/home.nix
       ];
     };
 
