@@ -15,7 +15,10 @@
 
     nixosConfigurations.container = stable.lib.nixosSystem {
       system = "x86_64-linux";
-      modules = [ ./configuration.nix ];
+      modules = [ 
+        ./thinkpad-x220.nix
+        ./configuration.nix
+      ];
     };
 
   };
