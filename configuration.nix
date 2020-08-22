@@ -5,50 +5,42 @@
 { config, pkgs, ... }:
 
 {
-  # Include the results of the hardware scan.
-  imports = [ ./thinkpad-x220.nix ];
-
-  # Enable Flakes
-  nix.package = pkgs.nixUnstable;
-  nix.extraOptions = "experimental-features = nix-command flakes";
-     
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_GB.UTF-8";
-  console = {
-    font = "Lat2-Terminus16";
-    keyMap = "us";
-  };
-
   # Set your time zone.
   time.timeZone = "Asia/Jakarta";
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-     wget vim
-     firefox
-     git
-     alacritty
-     htop
-  ];
-
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-  services.xserver.layout = "us";
-  # services.xserver.xkbOptions = "eurosign:e";
-
-  # Enable touchpad support.
-  services.xserver.libinput.enable = true;
-
-  # Enable i3 Window Manager
-  services.xserver.windowManager.i3.enable = true;
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.rafiyq = {
-    isNormalUser = true;
-    home = "/home/rafiyq";
-    extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
+  nix.trustedUsers = [ "rafiyq" ];
+  users.extraUsers."rafiyq" = {
+    isNormalUsers = true;
+    shell = pkgs.zsh;
+    extraGroups = [ "wheel" "networkmanager" "kvm" "libvirtd" "docker" "transmission" "audio" "video" "sway" "sound" "pulse" "input" "render" "dialout" ];
   };
+  
+  inputs.home.nixosModules."home-manager"
+
+  home-manager.useGlobalPkgs = true;
+  home-manager.users.rafiyq = { pkgs, ...}: {
+    home.sessionVariables = {
+      EDITOR = "vim";
+    };
+    programs = {
+      direnv.enable = true;
+      git.package = pkgs.gitAndTools.gitFull;
+      gpg.enable = true;
+      home-manager.enable = true;
+      htop.enable = true;
+    };
+    home.packages = with pkgs; [
+      wget curl
+      htop which
+      unrar unzip zip
+      sshfs cifs-utils ms-sys ntfs3g
+      gptfdisk parted
+      aria2 youtube-dl
+      brightnessctl pulsemixer
+      termite alacritty
+      chromium firefox
+    ];
+   }; 
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
