@@ -5,7 +5,7 @@
 { config, pkgs, ... }:
 
 {
-  nixpkgs.overlays = [ input.wayland.overlay ];
+  nixpkgs.overlays = [ inputs.wayland.overlay ];
 
   hardware.opengl = {
     enable = true;
