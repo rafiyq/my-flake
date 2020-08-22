@@ -16,7 +16,7 @@
         "type": "github"
       }
     },
-    "home": {
+    "home-manager": {
       "inputs": {
         "nixpkgs": [
           "stable"
@@ -39,7 +39,7 @@
     },
     "root": {
       "inputs": {
-        "home": "home",
+        "home-manager": "home-manager",
         "stable": "stable",
         "unstable": "unstable",
         "wayland": "wayland"
