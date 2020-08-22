@@ -15,7 +15,7 @@
     extraGroups = [ "wheel" "networkmanager" "kvm" "libvirtd" "docker" "transmission" "audio" "video" "sway" "sound" "pulse" "input" "render" "dialout" ];
   };
   
-  inputs.home.nixosModules."home-manager"
+  #inputs.home.nixosModules."home-manager"
 
   home-manager.useGlobalPkgs = true;
   home-manager.users.rafiyq = { pkgs, ...}: {
