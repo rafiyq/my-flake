@@ -13,7 +13,7 @@
       system = "x86_64-linux";
       modules = [
        { system.configurationRevision = nixpkgs.lib.mkIf (self ? rev) self.rev; }
-       ./configuration.nix
+       ./profiles/sway.nix
        nixpkgs.nixosModules.notDetected
        home.nixosModules.home-manager
       ];
