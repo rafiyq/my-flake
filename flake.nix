@@ -13,9 +13,9 @@
       system = "x86_64-linux";
       modules = [
        { system.configurationRevision = nixpkgs.lib.mkIf (self ? rev) self.rev; }
-       .configuration.nix
-       inputs.nixpkgs.nixosModules.notDetected
-       inputs.home.nixosModules.home-manager
+       ./configuration.nix
+       nixpkgs.nixosModules.notDetected
+       home.nixosModules.home-manager
       ];
     };
 
