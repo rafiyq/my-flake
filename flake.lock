@@ -1,101 +1,24 @@
 {
   "nodes": {
-    "cachix": {
+    "nixpkgs": {
       "locked": {
-        "lastModified": 1597850840,
-        "narHash": "sha256-OYlhqSfeq0oSSrsbYr4t2kQFtBWy/1+iZGSx3jjVUnE=",
-        "owner": "nixos",
+        "lastModified": 1592784995,
+        "narHash": "sha256-mj7GnZrzqwiaPf1WQ9HqOJ7eT+NHB1tDNN0mFTlgXzg=",
+        "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "fc966732c89f9485a1ea1a0f86b2a1bb97db862c",
+        "rev": "13c15f26d44cf7f54197891a6f0c78ce8149b037",
         "type": "github"
       },
       "original": {
-        "owner": "nixos",
+        "owner": "NixOS",
         "ref": "nixos-20.03",
         "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "home-manager": {
-      "inputs": {
-        "nixpkgs": [
-          "stable"
-        ]
-      },
-      "locked": {
-        "lastModified": 1591751635,
-        "narHash": "sha256-KgGtyFlkI/fsp+j8VEgJ/ynY9B91aX35Xp04HlDLRTo=",
-        "owner": "rycee",
-        "repo": "home-manager",
-        "rev": "b3fee796fcd5531693d9b84ece76ad6836bb1cfa",
-        "type": "github"
-      },
-      "original": {
-        "owner": "rycee",
-        "ref": "bqv-flakes",
-        "repo": "home-manager",
         "type": "github"
       }
     },
     "root": {
       "inputs": {
-        "home-manager": "home-manager",
-        "stable": "stable",
-        "unstable": "unstable",
-        "wayland": "wayland"
-      }
-    },
-    "stable": {
-      "locked": {
-        "lastModified": 1597909278,
-        "narHash": "sha256-fZFpyPyEMPd+qp6hg3LbCYNXkKh40F2I1za8lo4BCWA=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "de3780b937d2984f9b5e20d191f23be4f857b3aa",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixos-20.03",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "unstable": {
-      "locked": {
-        "lastModified": 1597854482,
-        "narHash": "sha256-2X5N2XTObZ1cCUBKyCNSqszUUMrUn76FmQXiH12hjHE=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "bd0e645f02416acb1683e458b4ed3ef4f9b09da9",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "wayland": {
-      "inputs": {
-        "cachix": "cachix",
-        "nixpkgs": [
-          "stable"
-        ]
-      },
-      "locked": {
-        "lastModified": 1597997396,
-        "narHash": "sha256-hSl3OrMgnMSPDO1TQTtyldKkG3X0v8P3Z6kKczsbYhw=",
-        "owner": "colemickens",
-        "repo": "nixpkgs-wayland",
-        "rev": "65a9eb4f3df5abf4346adf68519d6d31eda33f40",
-        "type": "github"
-      },
-      "original": {
-        "owner": "colemickens",
-        "repo": "nixpkgs-wayland",
-        "type": "github"
+        "nixpkgs": "nixpkgs"
       }
     }
   },

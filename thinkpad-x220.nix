@@ -4,8 +4,6 @@
 { config, lib, pkgs, ... }:
 
 {
-  # imports = [ stable.nixosModules.notDetected ];
-
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/c171b746-473a-4093-8e13-8f70e6f1ffc4";
       fsType = "ext4";

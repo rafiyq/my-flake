@@ -5,6 +5,8 @@
 { config, pkgs, ... }:
 
 {
+  imports = [ ./thinkpad-x220.nix ];
+
   # Set your time zone.
   time.timeZone = "Asia/Jakarta";
 
@@ -20,13 +22,7 @@
     home.sessionVariables = {
       EDITOR = "vim";
     };
-    programs = {
-      direnv.enable = true;
-      git.package = pkgs.gitAndTools.gitFull;
-      gpg.enable = true;
-      home-manager.enable = true;
-      htop.enable = true;
-    };
+
     home.packages = with pkgs; [
       wget curl
       htop which
@@ -36,7 +32,6 @@
       aria2 youtube-dl
       brightnessctl pulsemixer
       termite alacritty
-      chromium firefox
     ];
    }; 
 

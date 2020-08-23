@@ -5,6 +5,11 @@
 { config, pkgs, ... }:
 
 {
+  imports = [
+    ../configuration.nix
+    ../modules/home.nix
+  ];
+
   hardware.opengl = {
     enable = true;
     extraPackages = with pkgs; [
@@ -25,13 +30,38 @@
     };
   };
 
-  services.pcscd.enable = true;
-  #services.udiskie.enable = true;
+  #services.pcscd.enable = true;
+  services.udisks2.enable = true;
   
-  programs.sway.enable = true;
-  programs.sway.extraPackages = [];
+  programs.sway = {
+    enable = true;
+    wrapperFeatures = {
+      base = true;
+      gtk = true;
+    };
+    extraSessionCommands = ''
+      export SDL_VIDEODRIVER=wayland
+      # needs qt5.qtwayland in systemPackages
+      export QT_QPA_PLATFORM=wayland
+      export QT_WAYLAND_DISABLE_WINDOWDECORATION="1"
+      # Fix for some Java AWT applications (e.g. Android Studio),
+      # use this if they aren't displayed properly:
+      export _JAVA_AWT_WM_NONREPARENTING=1
+    '';
+    extraPackages = with pkgs; [
+      swaylock swayidle swaybg
+      grim mako clipman slurp
+      xwayland qt5.qtwayland
+      i3status-rust
+      termite wofi
+      light kanshi 
+      #wayvnc wf-recorder wl-clipboard wl-gammactl 
+    ];
   
   environment.systemPackages = with pkgs; [
+    drm_info imv 
+    firefox-wayland
+    pulsemixer
     vanilla-dmz
   ];
 
@@ -47,10 +77,6 @@
   home-manager.users.rafiyq = { pkgs, ...}: {
     wayland.windowManager.sway = {
       enable = true;
-      wrapperFeatures = {
-        base = true;
-        gtk = true;
-      };
       xwayland = true;
       extraConfig = ''
         seat seat0 xcursor_theme "Vanilla-DMZ"
@@ -65,23 +91,10 @@
       MOZ_USE_XINPUT2 = "1";
 
       WLR_DRM_NO_MODIFIERS = "1";
-      SDL_VIDEODRIVER = "wayland";
-      QT_QPA_PLATFORM = "wayland";
-      QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
-      _JAVA_AWT_WM_NONREPARENTING = "1";
       
       XDG_SESSION_TYPE = "wayland";
       XDG_SESSION_DESKTOP = "sway";
     };
-
-    home.packages = with pkgs; [
-      drm_info grim imv qt5.qtwayland slurp udiskie 
-      wayvnc wf-recorder wl-clipboard wl-gammactl 
-      xwayland
-      # pulsemixer
-      # termite 
-      # chromium firefox
-    ];
 
     gtk = {
       enable = true;

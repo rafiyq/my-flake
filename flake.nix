@@ -1,32 +1,21 @@
 {
-  description = "NixOS reproducible environment with flakes";
   inputs = {
-    stable.url = "github:NixOS/nixpkgs/nixos-20.03";
-    unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
-    
-    home-manager.url = "github:rycee/home-manager/bqv-flakes";
-    home-manager.inputs.nixpkgs.follows = "stable";
-
-    wayland.url = "github:colemickens/nixpkgs-wayland";
-    wayland.inputs.nixpkgs.follows = "stable";
-
-    # hardware.url = "github:NixOS/nixos-hardware";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-20.03";
+    home = {
+      url = "github:rycee/home-manager/bqv-flakes";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, stable, unstable, home-manager, wayland }: {
+  outputs = { self, nixpkgs }: {
 
-    nixosConfigurations.container = stable.lib.nixosSystem {
+    nixosConfigurations.container = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      modules = [ 
-        {
-          nixpkgs.overlays = [ wayland.overlay ];
-        }
-        stable.nixosModules.notDetected
-        home-manager.nixosModules.home-manager
-        ./thinkpad-x220.nix
-        ./configuration.nix
-        ./modules/home.nix
-        ./profiles/sway.nix
+      modules = [
+       { system.configurationRevision = nixpkgs.lib.mkIf (self ? rev) self.rev; }
+       .configuration.nix
+       inputs.nixpkgs.nixosModules.notDetected
+       inputs.home.nixosModules.home-manager
       ];
     };
 
