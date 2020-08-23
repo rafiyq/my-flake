@@ -57,6 +57,7 @@
       light kanshi 
       #wayvnc wf-recorder wl-clipboard wl-gammactl 
     ];
+  };
   
   environment.systemPackages = with pkgs; [
     drm_info imv 
