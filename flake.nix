@@ -14,8 +14,8 @@
       modules = [
        { system.configurationRevision = nixpkgs.lib.mkIf (self ? rev) self.rev; }
        .configuration.nix
-       inputs.nixpkgs.nixosModules.notDetected
-       inputs.home.nixosModules.home-manager
+       nixpkgs.nixosModules.notDetected
+       home.nixosModules.home-manager
       ];
     };
 
