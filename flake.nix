@@ -7,15 +7,15 @@
     };
   };
 
-  outputs = { self, nixpkgs }: {
+  outputs = { self, nixpkgs, home }: {
 
     nixosConfigurations.container = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
        { system.configurationRevision = nixpkgs.lib.mkIf (self ? rev) self.rev; }
        .configuration.nix
-       nixpkgs.nixosModules.notDetected
-       home.nixosModules.home-manager
+       inputs.nixpkgs.nixosModules.notDetected
+       inputs.home.nixosModules.home-manager
       ];
     };
 
