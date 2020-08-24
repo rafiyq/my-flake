@@ -116,7 +116,7 @@
       settings = {
         expandtab = true;
         number = true;
-        shiftwidth = 2
+        shiftwidth = 2;
         tabstop = 2;
       };
       extraConfig = ''
