@@ -13,9 +13,10 @@
       system = "x86_64-linux";
       modules = [
        { system.configurationRevision = nixpkgs.lib.mkIf (self ? rev) self.rev; }
-       ./profiles/sway.nix
        nixpkgs.nixosModules.notDetected
        home.nixosModules.home-manager
+       ./thinkpad-x220.nix
+       ./home.nix
       ];
     };
 
