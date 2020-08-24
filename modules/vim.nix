@@ -1,7 +1,6 @@
 { pkgs, ...}:
 
 {
-  config = {
     home-manager.users.rafiyq = { pkgs, ...}: {
       programs.vim = {
         enable = true;
@@ -17,5 +16,4 @@
         '';
       };
     };
-  };
 }
