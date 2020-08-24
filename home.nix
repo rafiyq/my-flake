@@ -38,7 +38,7 @@
     };
 
     home.keyboard.layout = "gb";
-    homd.homeDirectory = "/home/rafiyq";
+    home.homeDirectory = "/home/rafiyq";
     
     programs.firefox = {
       enable = true;
