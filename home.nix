@@ -45,7 +45,7 @@
       pakage = pkgs.firefox-wayland;
     };
     
-    program.termite = {
+    programs.termite = {
       enable = true;
       font = "cascadia-code 10";
     };
