@@ -42,7 +42,7 @@
     
     programs.firefox = {
       enable = true;
-      pakage = pkgs.firefox-wayland;
+      package = pkgs.firefox-wayland;
     };
     
     programs.termite = {
