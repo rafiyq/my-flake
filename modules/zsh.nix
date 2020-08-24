@@ -1,7 +1,6 @@
 { pkgs, ...}:
 
 {
-  config = {
     home-manager.users.rafiyq = { pkgs, ...}: {
       programs.zsh = {
         enable = true;
@@ -30,5 +29,4 @@
 	};
       };
     };
-  };
 }
