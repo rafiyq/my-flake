@@ -73,7 +73,7 @@
       '';
       config = {
         fonts = [ "Iosevka 9" ];
-        modifier = "mod4";
+        modifier = "Mod4";
         menu = "${pkgs.wofi}/bin/wofi --insensitive --show drun";
         terminal = "${pkgs.termite}/bin/termite";
          
