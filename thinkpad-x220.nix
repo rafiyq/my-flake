@@ -30,12 +30,10 @@
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
 
   nixpkgs.config.allowUnfree = true;
-  nix = {
-    package = pkgs.nixUnstable;
-    extraOptions = ''
-      experimental-features = nix-command flakes
-    '';
-  };
+  nix.package = pkgs.nixUnstable;
+  nix.extraOptions = ''
+   experimental-features = nix-command flakes
+  '';
 
   hardware = {
     bluetooth.enable = true;
