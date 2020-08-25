@@ -52,7 +52,7 @@
 
     wayland.windowManager.sway = {
       enable = true;
-      systemdIntegration = true;
+      #systemdIntegration = true;
       xwayland = true;
       wrapperFeatures = {
         base = true;
