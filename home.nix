@@ -28,7 +28,7 @@
       #wayvnc wf-recorder wl-clipboard wl-gammactl
 
       #other
-      vanilla-dmz
+      yaru-theme
     ];
  
     home.sessionVariables = {
