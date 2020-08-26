@@ -79,7 +79,7 @@
          
       }; 
       extraConfig = ''
-        seat seat0 xcursor_theme "Vanilla-DMZ"
+        seat seat0 xcursor_theme "Suru"
       '';
     };
 
