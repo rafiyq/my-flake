@@ -41,6 +41,18 @@
     home.keyboard.layout = "gb";
     home.homeDirectory = "/home/rafiyq";
     
+    gtk = {
+      enable = true;
+      font = "Noto Sans 11";
+      iconTheme = "Suru";
+      theme = "Yaru";
+      gtk3.extraConfig = {
+        gtk-xft-antialias = 1;
+        gtk-xft-hinting = 1;
+        gtk-xft-hintstyle = "hintfull";
+      };
+    };
+
     programs.firefox = {
       enable = true;
       package = pkgs.firefox-wayland;
@@ -50,7 +62,7 @@
       enable = true;
       font = "Cascadia Code 10";
     };
-
+     
     wayland.windowManager.sway = {
       enable = true;
       systemdIntegration = true;
@@ -65,9 +77,9 @@
       #  
       #  export WLR_DRM_NO_MODIFIERS = "1";
       #  export SDL_VIDEODRIVER = "wayland";
-        export QT_QPA_PLATFORM = "wayland";
-        export QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
-        export _JAVA_AWT_WM_NONREPARENTING = "1";
+      #  export QT_QPA_PLATFORM = "wayland";
+      ##  export QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
+      #  export _JAVA_AWT_WM_NONREPARENTING = "1";
         
       #  export XDG_SESSION_TYPE = "wayland";
       #  export XDG_CURRENT_DESKTOP = "sway";
@@ -84,10 +96,25 @@
       '';
     };
 
+    programs.emacs = {
+      enable = true;
+    };
+
     programs.git = {
       enable = true;
       userEmail = "rafiyqw@tutanota.com";
       userName = "Rafiyq Widianto";
+    };
+
+    programs.mpv = {
+      enable = true;
+      config = {
+        video-sync = "display-resample";
+        hwdec = "vaapi";
+        vo = "gpu";
+        hwdec-codecs = "all";
+        gpu-context = "wayland";
+      };
     };
 
     programs.tmux = {
@@ -116,13 +143,13 @@
       enable = true;
       settings = {
         expandtab = true;
+        number = true;
         shiftwidth = 2;
         tabstop = 2;
       };
       extraConfig = ''
         syntax on
         set hlsearch
-        set number
       '';
     };
 
