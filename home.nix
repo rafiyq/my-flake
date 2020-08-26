@@ -47,7 +47,7 @@
     
     programs.termite = {
       enable = true;
-      font = "cascadia-code 10";
+      font = "Cascadia Code 10";
     };
 
     wayland.windowManager.sway = {
@@ -79,7 +79,7 @@
          
       }; 
       extraConfig = ''
-        seat seat0 xcursor_theme "vanilla-dmz"
+        seat seat0 xcursor_theme "Vanilla-DMZ"
       '';
     };
 
