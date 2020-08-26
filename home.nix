@@ -28,6 +28,7 @@
       #wayvnc wf-recorder wl-clipboard wl-gammactl
 
       #other
+      vanilla-dmz
       yaru-theme
     ];
  
@@ -78,9 +79,9 @@
         terminal = "${pkgs.termite}/bin/termite";
          
       }; 
-      #extraConfig = ''
-      #  seat seat0 xcursor_theme "Suru"
-      #'';
+      extraConfig = ''
+        seat seat0 xcursor_theme "Vanilla-DMZ"
+      '';
     };
 
     programs.git = {
