@@ -80,7 +80,7 @@
          
       }; 
       extraConfig = ''
-        seat seat0 xcursor_theme "VanillaDMZ"
+        seat seat0 xcursor_theme "Vanilla-DMZ"
       '';
     };
 
