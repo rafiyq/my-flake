@@ -29,7 +29,7 @@
 
       #other
       vanilla-dmz
-      yaru-theme
+      #yaru-theme
     ];
  
     home.sessionVariables = {
@@ -64,7 +64,7 @@
       #  export MOZ_USE_XINPUT2 = "1";
       #  
       #  export WLR_DRM_NO_MODIFIERS = "1";
-        export SDL_VIDEODRIVER = "wayland";
+      #  export SDL_VIDEODRIVER = "wayland";
         export QT_QPA_PLATFORM = "wayland";
         export QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
         export _JAVA_AWT_WM_NONREPARENTING = "1";
@@ -80,7 +80,7 @@
          
       }; 
       extraConfig = ''
-        seat seat0 xcursor_theme "Vanilla-DMZ"
+        seat seat0 xcursor_theme "VanillaDMZ"
       '';
     };
 
