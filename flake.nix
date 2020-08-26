@@ -19,6 +19,6 @@
        ./home.nix
       ];
     };
-    container = inputs.self.nixosConfigurations.container.config.system.build.toplevel;
+    container = self.nixosConfigurations.container.config.system.build.toplevel;
   };
 }
