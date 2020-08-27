@@ -1,6 +1,10 @@
 {
   inputs = {
+<<<<<<< HEAD
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-20.03";
+=======
+    stable.url = "github:NixOS/nixpkgs/nixos-20.03";
+>>>>>>> master
     unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     home = {
       url = "github:rycee/home-manager/bqv-flakes";
@@ -8,13 +12,17 @@
     };
   };
 
+<<<<<<< HEAD
   outputs = { self, nixpkgs, unstable, home }: {
+=======
+  outputs = { self, stable, unstable, home }: {
+>>>>>>> master
 
-    nixosConfigurations.container = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.container = stable.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-       { system.configurationRevision = nixpkgs.lib.mkIf (self ? rev) self.rev; }
-       nixpkgs.nixosModules.notDetected
+       { system.configurationRevision = stable.lib.mkIf (self ? rev) self.rev; }
+       stable.nixosModules.notDetected
        home.nixosModules.home-manager
        ./thinkpad-x220.nix
        ./home.nix
