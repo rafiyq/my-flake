@@ -89,7 +89,20 @@
         modifier = "Mod4";
         menu = "${pkgs.wofi}/bin/wofi --insensitive --show drun";
         terminal = "${pkgs.termite}/bin/termite";
-        window.titlebar = true;
+        window.border = 4;
+        bars.colors = {
+          background = "#1F1F1F";
+          inactive_workspace = "#282828 #282828 #888888";
+          active_workspace = "#282828 #282828 #ffffff";
+          urgent_workspace = "#900000 #900000 #ffffff";
+          focused_workspace = "#285577 #285577 #ffffff";
+          urgent_workspace = "#900000 #900000 #ffffff";
+        };
+        colors = {
+          focused = "#285577 #285577 #ffffff #285577 #285577";
+          unfocused = "#282828 #282828 #ffffff #282828 #282828";
+          focused_inactive = "#282828 #282828 #ffffff #282828 #282828";
+        };
          
       }; 
       extraConfig = ''
