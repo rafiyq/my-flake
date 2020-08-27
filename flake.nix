@@ -1,13 +1,14 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-20.03";
+    unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     home = {
       url = "github:rycee/home-manager/bqv-flakes";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, home }: {
+  outputs = { self, nixpkgs, unstable, home }: {
 
     nixosConfigurations.container = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
