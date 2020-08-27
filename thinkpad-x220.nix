@@ -30,7 +30,7 @@
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
 
   nixpkgs.config.allowUnfree = true;
-  nix.package = pkgs.nixFlakes;
+  nix.package = pkgs.nixUnstable;
   nix.extraOptions = ''
    experimental-features = nix-command flakes
   '';
