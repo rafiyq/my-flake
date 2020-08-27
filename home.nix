@@ -67,7 +67,6 @@
       enable = true;
       systemdIntegration = true;
       xwayland = true;
-      window.titlebar = true;
       wrapperFeatures = {
         base = true;
         gtk = true;
@@ -90,6 +89,7 @@
         modifier = "Mod4";
         menu = "${pkgs.wofi}/bin/wofi --insensitive --show drun";
         terminal = "${pkgs.termite}/bin/termite";
+        window.titlebar = true;
          
       }; 
       extraConfig = ''
