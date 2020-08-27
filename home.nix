@@ -43,9 +43,9 @@
     
     gtk = {
       enable = true;
-      font = "Noto Sans 11";
-      iconTheme = "Suru";
-      theme = "Yaru";
+      font = { name = "Noto Sans 11"; package = pkgs.noto-fonts; };
+      iconTheme = { name = "Suru"; package = pkgs.yaru-theme; };
+      theme = { name = "Yaru"; package = pkgs.yaru-theme; };
       gtk3.extraConfig = {
         gtk-xft-antialias = 1;
         gtk-xft-hinting = 1;
