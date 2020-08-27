@@ -44,7 +44,7 @@
     gtk = {
       enable = true;
       font = { name = "Noto Sans 11"; package = pkgs.noto-fonts; };
-      iconTheme = { name = "Suru"; package = pkgs.yaru-theme; };
+      iconTheme = { name = "Yaru"; package = pkgs.yaru-theme; };
       theme = { name = "Yaru"; package = pkgs.yaru-theme; };
       gtk3.extraConfig = {
         gtk-xft-antialias = 1;
@@ -60,7 +60,7 @@
     
     programs.termite = {
       enable = true;
-      font = "Cascadia Code 10";
+      font = "Iosevka 10";
     };
      
     wayland.windowManager.sway = {
@@ -85,7 +85,7 @@
       #  export XDG_CURRENT_DESKTOP = "sway";
       '';
       config = {
-        fonts = [ "Iosevka 9" ];
+        fonts = [ "Iosevka 8" ];
         modifier = "Mod4";
         menu = "${pkgs.wofi}/bin/wofi --insensitive --show drun";
         terminal = "${pkgs.termite}/bin/termite";
