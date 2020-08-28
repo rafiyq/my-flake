@@ -44,8 +44,6 @@
   };
 
   i18n.defaultLocale = "en_GB.UTF-8";
-  console.font = "ter-v32n";
-  console.packages = [ pkgs.terminus_font ];
   time.timeZone = "Asia/Jakarta";
 
   networking = {
@@ -90,6 +88,7 @@
   users.extraUsers.rafiyq = {
     isNormalUser = true;
     uid = 1000;
+    home = "/home/rafiyq/";
     extraGroups = [ 
       "users" "wheel" "networkmanager" "kvm" "libvirtd"
       "docker" "transmission" "audio" "video" "sway"

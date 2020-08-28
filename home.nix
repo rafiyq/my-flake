@@ -24,7 +24,7 @@
       xwayland qt5.qtwayland
       i3status-rust
       wofi drm_info imv
-      light kanshi
+      light kanshi bemenu
       #wayvnc wf-recorder wl-clipboard wl-gammactl
 
       #other
@@ -101,15 +101,15 @@
             dwt = "enabled";
             scroll_method = "two_finger";
             natural_scroll = "enabled";
-            accel_profile = "adaptive";
+            #accel_profile = "adaptive";
             pointer_accel = "1";
           };
           "1:1:AT_Translated_Set_2_keyboard" = { xkb_layout = "gb"; };
         };
         output = { "*" = { bg = "#185373 solid_color"; }; };
         keybindings = {
-          "${cfg.config.modifier}+Print" = ''exec ${pkgs.grim}/bin/grim \"''${HOME}/$(date +"Screenshot-%d%m%Y-%H%M%S").png\"'';
-          "${cfg.config.modifier}+Print" = ''exec ${pkgs.grim}/bin/grim -g \"$(slurp)\" \"''${HOME}/$(date +"Screenshot-%d%m%Y-%H%M%S").png\"'';
+          "${cfg.config.modifier}+Print" = ''exec ${pkgs.grim}/bin/grim \"${HOME}/$(date +'Screenshot-%d%m%Y-%H%M%S').png\"'';
+          "${cfg.config.modifier}+Print" = ''exec ${pkgs.grim}/bin/grim -g \"$(slurp)\" \"${HOME}/$(date +"Screenshot-%d%m%Y-%H%M%S").png\"'';
         };
       }; 
       extraConfig = ''
