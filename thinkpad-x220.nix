@@ -73,6 +73,8 @@
     enableFontDir = true;
     enableGhostscriptFonts = true;
     fontconfig.dpi = 192;
+    fontconfig.defaultFonts.monospace = [ "Iosevka" ];
+    enableDefaultFonts = true;
     fonts = with pkgs; [ ];
   };
 
