@@ -35,6 +35,7 @@
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
+    registry.self.flake = inputs.self;
    };
 
   hardware = {
