@@ -91,7 +91,6 @@
   users.extraUsers.rafiyq = {
     isNormalUser = true;
     uid = 1000;
-    home = "/home/rafiyq/";
     extraGroups = [ 
       "users" "wheel" "networkmanager" "kvm" "libvirtd"
       "docker" "transmission" "audio" "video" "sway"

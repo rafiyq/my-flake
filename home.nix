@@ -108,8 +108,8 @@
         };
         output = { "*" = { bg = "#185373 solid_color"; }; };
         keybindings = {
-          "${config.modifier}+Print" = ''exec ${pkgs.grim}/bin/grim Pictures/$(date +'Screenshot-%d%m%Y-%H%M%S').png'';
-          "${config.modifier}+Shift+Print" = ''exec ${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp)" Pictures/$(date +'Screenshot-%d%m%Y-%H%M%S').png'';
+          #"${config.modifier}+Print" = ''exec ${pkgs.grim}/bin/grim Pictures/$(date +'Screenshot-%d%m%Y-%H%M%S').png'';
+          #"${config.modifier}+Shift+Print" = ''exec ${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp)" Pictures/$(date +'Screenshot-%d%m%Y-%H%M%S').png'';
         };
       }; 
       extraConfig = ''
