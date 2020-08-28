@@ -89,6 +89,7 @@
         modifier = "Mod4";
         menu = "${pkgs.wofi}/bin/wofi --insensitive --show drun";
         terminal = "${pkgs.termite}/bin/termite";
+        window.titlebar = true;
         window.border = 4;
         input = {
           "2:7:SynPS/2_Synaptics_TouchPad" = {
@@ -103,6 +104,10 @@
           "1:1:AT_Translated_Set_2_keyboard" = { xkb_layout = "gb"; };
         };
         output = { "*" = { bg = "#185373 solid_color"; }; };
+        keybindings = {
+          "${cfg.config.modifier}+Print" = ''exec ${pkgs.grim}/bin/grim \"''${HOME}/$(date +"Screenshot-%d%m%Y-%H%M%S").png\"'';
+          "${cfg.config.modifier}+Print" = ''exec ${pkgs.grim}/bin/grim -g \"$(slurp)\" \"''${HOME}/$(date +"Screenshot-%d%m%Y-%H%M%S").png\"'';
+        };
       }; 
       extraConfig = ''
         seat seat0 xcursor_theme "Yaru"
