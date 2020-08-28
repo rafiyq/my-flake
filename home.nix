@@ -90,39 +90,22 @@
         menu = "${pkgs.wofi}/bin/wofi --insensitive --show drun";
         terminal = "${pkgs.termite}/bin/termite";
         window.border = 4;
-        #colors = [{ }];
-         
-        #bars.colors = [{
-        #  background = "#1F1F1F";
-        #  inactive_workspace = "#282828 #282828 #888888";
-        #  active_workspace = "#282828 #282828 #ffffff";
-        #  urgent_workspace = "#900000 #900000 #ffffff";
-        #  focused_workspace = "#285577 #285577 #ffffff";
-        # # urgent_workspace = "#900000 #900000 #ffffff";
-        #}];
+        input = {
+          "2:7:SynPS/2_Synaptics_TouchPad" = {
+            click_method = "clickfinger";
+            tap = "enabled";
+            dwt = "enabled";
+            scroll_method = "two_finger";
+            natural_scroll = "enabled";
+            accel_profile = "adaptive";
+            pointer_accel = "1";
+          };
+          "1:1:AT_Translated_Set_2_keyboard" = { xkb_layout = "gb"; };
+        };
+        output = { "*" = { bg = "#185373 solid_color"; }; };
       }; 
       extraConfig = ''
         seat seat0 xcursor_theme "Yaru"
-        set $blue #285577
-        set $gray #282828
-	set $red #900000
-
-	client.focused $blue $blue #ffffff $blue $blue
-	client.unfocused $gray $gray #ffffff $gray $gray
-	client.focused_inactive $gray $gray #ffffff $gray $gray 
-        bar {
-                colors {
-                    background #1F1F1F
-                    inactive_workspace $gray $gray #888888
-                    active_workspace $gray $gray #ffffff
-                    urgent_workspace $red $red #ffffff
-                    focused_workspace $blue $blue #ffffff
-                    urgent_workspace $red $red #ffffff
-                }
-        }
-          #client.focused #285577 #285577 #ffffff #285577 #285577
-          #client.unfocused #282828 #282828 #ffffff #282828 #282828
-          #client.focused_inactive #282828 #282828 #ffffff #282828 #282828
       '';
     };
 
