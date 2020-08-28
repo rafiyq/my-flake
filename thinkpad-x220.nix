@@ -44,7 +44,8 @@
   };
 
   i18n.defaultLocale = "en_GB.UTF-8";
-  console.font = "Lat2-Terminus16";
+  console.font = "ter-v32n";
+  console.packages = [ pkgs.terminus_font ];
   time.timeZone = "Asia/Jakarta";
 
   networking = {

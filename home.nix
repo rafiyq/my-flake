@@ -60,7 +60,10 @@
     
     programs.termite = {
       enable = true;
+      clickableUrl = true;
+      dynamicTitle = true;
       font = "Iosevka 12";
+      iconName = "terminal";
     };
      
     wayland.windowManager.sway = {
