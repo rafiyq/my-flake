@@ -9,11 +9,11 @@
   };
 
   outputs = { self, nixpkgs, unstable, home }: {
-    nixosConfigurations.container = stable.lib.nixosSystem {
+    nixosConfigurations.container = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-       { system.configurationRevision = stable.lib.mkIf (self ? rev) self.rev; }
-       stable.nixosModules.notDetected
+       { system.configurationRevision = nixpkgs.lib.mkIf (self ? rev) self.rev; }
+       nixpkgs.nixosModules.notDetected
        home.nixosModules.home-manager
        ./thinkpad-x220.nix
        ./home.nix
