@@ -32,12 +32,12 @@
   nixpkgs.config.allowUnfree = true;
   nix = {
     trustedUsers = [ "root" "rafiyq" "@wheel" ];
-    package = pkgs.unstable.nixFlakes;
+    package = pkgs.nixUnstable;
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
     registry.self.flake = inputs.self;
-   };
+  };
 
   hardware = {
     bluetooth.enable = true;
@@ -98,6 +98,12 @@
       "sound" "pulse" "input" "render" "dialout"
     ];
   };
- 
+  
+  services.mingetty.autologinUser = "rafiyq";
+  environment.loginShellInit = ''
+    [[ "$(tty)" == /dev/tty? ]] && sudo /run/current-system/sw/bin/lock this
+    [[ "$(tty)" == /dev/tty1 ]] && sway
+  '';
+
   system.stateVersion = "20.03";
 }
