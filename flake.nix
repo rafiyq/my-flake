@@ -8,7 +8,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, unstable, home }: {
+  outputs = { self, nixpkgs, unstable, home }@inputs: {
     nixosConfigurations.container = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
@@ -18,7 +18,8 @@
        ./thinkpad-x220.nix
        ./home.nix
       ];
+      specialArgs = { inherit inputs name; };
     };
-    container = self.nixosConfigurations.container.config.system.build.toplevel;
+    container = inputs.self.nixosConfigurations.container.config.system.build.toplevel;
   };
 }

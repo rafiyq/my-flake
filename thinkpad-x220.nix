@@ -31,7 +31,8 @@
 
   nixpkgs.config.allowUnfree = true;
   nix = {
-    package = pkgs.nixUnstable;
+    trustedUsers = [ "root" "rafiyq" "@wheel" ];
+    package = pkgs.unstable.nixFlakes;
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
