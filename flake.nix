@@ -2,23 +2,24 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-20.03";
     unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    home = {
-      url = "github:rycee/home-manager/bqv-flakes";
-      inputs.nixpkgs.follows = "nixpkgs";
+    home.url = "github:rycee/home-manager/bqv-flakes";
+    hardware.url = "github:NixOS/nixos-hardware";
     };
   };
 
-  outputs = { self, nixpkgs, unstable, home }@inputs: {
+  outputs = { self, nixpkgs, unstable, home, hardware }@inputs: {
     nixosConfigurations.container = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
        { 
          system.configurationRevision = nixpkgs.lib.mkIf (self ? rev) self.rev;
        }
-       nixpkgs.nixosModules.notDetected
+       inputs.hardware.nixosModules.lenovo-thinkpad-x220
+       ./hosts/thinkpad-x220
        home.nixosModules.home-manager
-       ./thinkpad-x220.nix
-       ./home.nix
+       ./modules
+       ./profiles/sway
+       nixpkgs.nixosModules.notDetected
       ];
       specialArgs = { inherit inputs; };
     };
