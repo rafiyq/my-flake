@@ -1,8 +1,8 @@
-{ inputs, config, lib, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   imports = [ 
-    ./core/default.nix
-    ./misc/default.nix
+    ./core
+    ./misc
   ];
 }

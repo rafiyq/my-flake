@@ -4,31 +4,34 @@
     enable = true;
     extraPackages = with pkgs; [ ];
   };
+  services.xserver.displayManager.sessionPackages = [ pkgs.sway ];
 
   home-manager.users.rafiyq = {     
     wayland.windowManager.sway = {
       enable = true;
       systemdIntegration = true;
       xwayland = true;
-      wrapperFeatures = {
-        base = true;
-        gtk = true;
-      };
+      wrapperFeatures.gtk = true;
       extraSessionCommands = ''
-        export MOZ_ENABLE_WAYLAND="1";
-        export MOZ_USE_XINPUT2="1";
+        export MOZ_ENABLE_WAYLAND=1;
+        export MOZ_USE_XINPUT2=1;
         
-        export WLR_DRM_NO_MODIFIERS="1";
+        export WLR_DRM_NO_MODIFIERS=1;
+        export WLR_DRM_DEVICES=/dev/dri/card1:/dev/dri/card0 sway;
         export SDL_VIDEODRIVER=wayland;
+        
         export QT_QPA_PLATFORM=wayland;
-        export QT_WAYLAND_DISABLE_WINDOWDECORATION="1";
-        export _JAVA_AWT_WM_NONREPARENTING="1";
+        export QT_WAYLAND_DISABLE_WINDOWDECORATION=1;
+        export QT_WAYLAND_FORCE_DPI=physical;
+        
+        export _JAVA_AWT_WM_NONREPARENTING=1;
+        export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dsun.java2d.xrender=true";
         
         export XDG_SESSION_TYPE=wayland;
         export XDG_CURRENT_DESKTOP=sway;
       '';
       config = {
-        fonts = [ "Iosevka 8" ];
+        #fonts = [ "Iosevka 8" ];
         modifier = "Mod4";
         menu = "${pkgs.wofi}/bin/wofi --insensitive --show drun";
         terminal = "${pkgs.termite}/bin/termite";
