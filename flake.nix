@@ -23,6 +23,6 @@
       ];
       specialArgs = { inherit inputs; };
     };
-    nixos = inputs.self.nixosConfigurations.container.config.system.build.toplevel;
+    nixos = inputs.self.nixosConfigurations.nixos.config.system.build.toplevel;
   };
 }
