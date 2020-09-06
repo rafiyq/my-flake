@@ -16,10 +16,10 @@
        inputs.hardware.nixosModules.lenovo-thinkpad-x220
        ./hosts/thinkpad-x220/configuration.nix
        ./profiles/base/default.nix
-       home.nixosModules.home-manager
+       inputs.home.nixosModules.home-manager
        ./modules/default.nix
        ./profiles/sway/default.nix
-       nixpkgs.nixosModules.notDetected
+       inputs.nixpkgs.nixosModules.notDetected
       ];
       specialArgs = { inherit inputs; };
     };
