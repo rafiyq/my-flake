@@ -17,7 +17,7 @@
   
   fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/057D-C047";
-    fsType = "vfat"
+    fsType = "vfat";
   };
 
   boot.initrd.luks.devices = {

@@ -7,7 +7,7 @@
   };
 
   outputs = { self, nixpkgs, unstable, home, hardware }@inputs: {
-    nixosConfigurations.container = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
        { 
@@ -23,6 +23,6 @@
       ];
       specialArgs = { inherit inputs; };
     };
-    container = inputs.self.nixosConfigurations.container.config.system.build.toplevel;
+    nixos = inputs.self.nixosConfigurations.container.config.system.build.toplevel;
   };
 }

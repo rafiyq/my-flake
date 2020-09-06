@@ -5,7 +5,7 @@
 { config, lib, pkgs, inputs, ... }: {
   
   networking = {
-    hostName = "thinkpad-x220";
+    hostName = "nixos";
     networkmanager.enable = true;
   };
 }
