@@ -2,6 +2,7 @@
 
 {
   imports = [ 
+    ./base.nix
     ./gtk.nix
     ./xdg.nix
   ];
