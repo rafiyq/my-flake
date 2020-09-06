@@ -45,11 +45,11 @@
             scroll_method = "two_finger";
             natural_scroll = "enabled";
             #accel_profile = "adaptive";
-            pointer_accel = "1";
+            pointer_accel = "0.5";
           };
           "1:1:AT_Translated_Set_2_keyboard" = { xkb_layout = "gb"; };
         };
-        output = { "*" = { bg = "#185373 solid_color"; }; };
+        #output = { "*" = { bg = "#185373 solid_color"; }; };
         #keybindings = lib.mkOptionDefault {
         #  "${config.modifier}+Print" = "exec ${pkgs.grim}/bin/grim Pictures/$(date +'Screenshot-%d%m%Y-%H%M%S').png";
         #  "${config.modifier}+Shift+Print" = ''
