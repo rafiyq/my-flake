@@ -8,7 +8,7 @@
   nix = {
     allowedUsers = [ "@wheel" ];
     trustedUsers = [ "root" "@wheel" ];
-    package = pkgs.nixFlakes;
+    package = pkgs.nixUnstable;
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
