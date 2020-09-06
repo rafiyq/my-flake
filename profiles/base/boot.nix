@@ -13,11 +13,5 @@
     tmpOnTmpfs = true;
   };
   
-  
-  console.earlySetup = true;
-  i18n.defaultLocale = "en_GB.UTF-8";
-  console.keyMap = "gb";
-  time.timeZone = "Asia/Jakarta";
-  
   system.stateVersion = "20.03";
 }
