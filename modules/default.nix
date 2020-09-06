@@ -2,7 +2,7 @@
 
 {
   imports = [ 
-    ./core
-    ./misc
+    ./core/default.nix
+    ./misc/default.nix
   ];
 }
