@@ -50,12 +50,12 @@
           "1:1:AT_Translated_Set_2_keyboard" = { xkb_layout = "gb"; };
         };
         output = { "*" = { bg = "#185373 solid_color"; }; };
-        keybindings = lib.mkOptionDefault {
-          "${config.modifier}+Print" = "exec ${pkgs.grim}/bin/grim Pictures/$(date +'Screenshot-%d%m%Y-%H%M%S').png";
-          "${config.modifier}+Shift+Print" = ''
-            exec ${pkgs.grim}/bin/grim -g | \
-            ${pkgs.slurp}/bin/slurp Pictures/$(date +'Screenshot-%d%m%Y-%H%M%S').png'';
-        };
+        #keybindings = lib.mkOptionDefault {
+        #  "${config.modifier}+Print" = "exec ${pkgs.grim}/bin/grim Pictures/$(date +'Screenshot-%d%m%Y-%H%M%S').png";
+        #  "${config.modifier}+Shift+Print" = ''
+        #    exec ${pkgs.grim}/bin/grim -g | \
+        #    ${pkgs.slurp}/bin/slurp Pictures/$(date +'Screenshot-%d%m%Y-%H%M%S').png'';
+        #};
       }; 
       extraConfig = ''
         seat seat0 xcursor_theme "Yaru"
