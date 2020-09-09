@@ -16,13 +16,13 @@
            then self.rev
            else throw "Refusing to build from a dirty Git tree!";
        }
-       inputs.hardware.nixosModules.lenovo-thinkpad-x220
+       hardware.nixosModules.lenovo-thinkpad-x220
        ./hosts/thinkpad-x220/configuration.nix
        ./profiles/base/default.nix
-       inputs.home.nixosModules.home-manager
+       home.nixosModules.home-manager
        ./modules/default.nix
        ./profiles/sway/default.nix
-       inputs.nixpkgs.nixosModules.notDetected
+       nixpkgs.nixosModules.notDetected
       ];
       specialArgs = { inherit inputs; };
     };
