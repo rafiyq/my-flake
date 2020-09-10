@@ -3,8 +3,8 @@
 {
   imports = [ 
     ./boot.nix
-    ./console.nix
     ./network.nix
+    ./console.nix
     ./laptop.nix
     ./sound.nix
     ./bluetooth.nix
