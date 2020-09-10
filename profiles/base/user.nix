@@ -4,15 +4,15 @@
 
 { config, lib, pkgs, inputs, ... }: {
 
-  users = {
-    defaultUserShell = pkgs.zsh;
-    extraUsers.rafiyq = {
-      isNormalUser = true;
+  users.users = {
+    rafiyq = {
       uid = 1000;
-      extraGroups = [ 
-        "users" "wheel" "networkmanager" "kvm" "libvirtd"
-        "docker" "transmission" "audio" "video" "sway"
-        "sound" "pulse" "input" "render" "dialout"
+      home = "/home/rafiyq";
+      createHome = true;
+      shell = pkgs.zsh;
+      group = "users";
+      extraGroups = [
+        "wheel" "disk" "audio" "video" "input" "kvm" "render"
       ];
     };
   };
