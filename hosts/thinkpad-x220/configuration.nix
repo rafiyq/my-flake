@@ -10,24 +10,6 @@
       ./hardware-configuration.nix
     ];
 
-  fileSystems."/" = {
-    device = "/dev/disk/by-uuid/56901013-5bcd-435c-83b6-8b90539068f5";
-    fsType = "ext4";
-  };
-  
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/057D-C047";
-    fsType = "vfat";
-  };
-
-  boot.initrd.luks.devices = {
-    cryptlvm = {
-      device = "/dev/disk/by-uuid/a52ead7d-6ec7-446b-893b-bee7ef392004";
-      preLVM = true;
-      allowDiscards = true;
-    };
-  };
- 
   # Use the GRUB 2 boot loader.
   #boot.loader.grub.enable = true;
   #boot.loader.grub.version = 2;

@@ -13,10 +13,28 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
+  fileSystems."/" = {
+    device = "/dev/disk/by-uuid/56901013-5bcd-435c-83b6-8b90539068f5";
+    fsType = "ext4";
+  };
+  
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-uuid/057D-C047";
+    fsType = "vfat";
+  };
+
   swapDevices =
     [ { device = "/dev/disk/by-uuid/0c7ce641-f70b-4bde-b34e-d942b798e253"; }
     ];
 
+  boot.initrd.luks.devices = {
+    cryptlvm = {
+      device = "/dev/disk/by-uuid/a52ead7d-6ec7-446b-893b-bee7ef392004";
+      preLVM = true;
+      allowDiscards = true;
+    };
+  };
+ 
   nix.maxJobs = lib.mkDefault 4;
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
 }
