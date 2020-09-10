@@ -10,5 +10,6 @@
       systemd-boot.enable = true;
       timeout = lib.mkDefault 1;
     };
+    tmpOnTmpfs = true;
   };
 }
