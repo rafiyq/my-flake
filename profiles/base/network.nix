@@ -7,6 +7,7 @@
   networking = {
     hostName = "nixos";
     networkmanager.enable = true;
+    firewall.enable = true;
     useDHCP = false;
     interfaces = {
       enp0s25.useDHCP = true;
