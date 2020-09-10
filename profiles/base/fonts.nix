@@ -7,9 +7,16 @@
   fonts = {
     enableFontDir = true;
     enableGhostscriptFonts = true;
-    fontconfig.dpi = 192;
-    fontconfig.defaultFonts.monospace = [ "Iosevka" ];
-    enableDefaultFonts = true;
-    fonts = with pkgs; [ ];
+    fonts = with pkgs; [
+      ubuntu_font_family
+      dejavu_font
+      fira-code fira-code-symbols
+      noto-fonts noto-fonts-cjk
+      font-awesome-ttf
+    ];
+    fontconfig.defaultFonts = {
+      monospace = [ "Fira Code" ];
+      sansSerif = [ "Ubuntu" ];
+    };
   };
 }
