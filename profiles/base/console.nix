@@ -4,9 +4,10 @@
 
 { config, lib, pkgs, inputs, ... }: {
   
-  console.earlySetup = true;
-  i18n.defaultLocale = "en_GB.UTF-8";
-  console.keyMap = "uk";
+  console = {
+    earlySetup = true;
+    keyMap = "uk";
+  };
   time.timeZone = "Asia/Jakarta";
   
 }
