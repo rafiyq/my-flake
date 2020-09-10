@@ -8,10 +8,7 @@
     loader = {
       efi.canTouchEfiVariables = true;
       systemd-boot.enable = true;
-      timeout = lib.mkDefault 2;
+      timeout = lib.mkDefault 1;
     };
-    tmpOnTmpfs = true;
   };
-  
-  system.stateVersion = "20.03";
 }
