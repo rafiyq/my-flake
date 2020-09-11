@@ -9,7 +9,7 @@
         "split_ratio = 0.5;
         "gapless_monocle" = true;
       };
-      monitors = { "$MONITOR" = [ "1" "2" "3" "4" "5" "6" ]; };
+      monitors = { "*" = [ "1" "2" "3" "4" "5" "6" ]; };
     };
   };
 }
