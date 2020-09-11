@@ -8,7 +8,7 @@
     layout = "gb";
     synaptics = {
       enable = true;
-      twoFingersScroll = true;
+      twoFingerScroll = true;
     };
   };
 }
