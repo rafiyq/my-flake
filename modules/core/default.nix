@@ -2,6 +2,7 @@
 
 {
   imports = [ 
+    ./packages.nix
     ./git.nix
     ./tmux.nix
     ./vim.nix
