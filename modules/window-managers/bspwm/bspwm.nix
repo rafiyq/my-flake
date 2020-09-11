@@ -4,7 +4,12 @@
     xsession.enable = true;
     xsession.windowManager.bspwm = {
       enable = true;
-      setting = {};
+      settings = {
+        "border_width" = 2;
+        "split_ratio = 0.5;
+        "gapless_monocle" = true;
+      };
+      monitors = { "$MONITOR" = [ "1" "2" "3" "4" "5" "6" ]; };
     };
   };
 }
