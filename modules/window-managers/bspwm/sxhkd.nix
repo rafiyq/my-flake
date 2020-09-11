@@ -5,7 +5,7 @@
       enable = true;
       keybindings = {
         # wm independent hotkeys
-        "super + Return" = "urxvt";
+        "super + Return" = "alacritty";
         "super + @space" = "dmenu_run";
         "super + Escape" = "pkill -USR1 -x sxhkd";
 
