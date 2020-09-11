@@ -6,6 +6,7 @@
   
   services.xserver = {
     layout = "gb";
+    libinput.enable = false;
     synaptics = {
       enable = true;
       twoFingerScroll = true;
