@@ -22,6 +22,7 @@
        ./profiles/base/default.nix
        home.nixosModules.home-manager
        ./modules/core/default.nix
+       ./modules/window-managers/bspwm/default.nix
        #./profiles/sway/default.nix
       ];
       specialArgs = { inherit inputs; };
