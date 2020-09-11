@@ -21,8 +21,6 @@
     displayManager.defaultSession = "xsession";
     # https://vid.bina.me/tools/nixos/breaking-down-the-nixos-gui-setup/
     displayManager.job.logToJournal = true;
-    
-    libinput.enable = true;
   };
 }
 
