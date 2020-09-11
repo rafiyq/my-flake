@@ -5,10 +5,11 @@
     ./boot.nix
     ./network.nix
     ./console.nix
+    ./packages.nix
+    ./nix.nix
     ./laptop.nix
     ./sound.nix
     ./bluetooth.nix
-    ./nix.nix
     ./fonts.nix
     ./users.nix
   ];
