@@ -20,7 +20,7 @@
        nixpkgs.nixosModules.notDetected
        hardware.nixosModules.lenovo-thinkpad-x220
        ./profiles/base/default.nix
-       home.nixosModules.home-manager
+       inputs.home.nixosModules.home-manager
        ./modules/core/default.nix
        ./modules/window-managers/bspwm/default.nix
        #./profiles/sway/default.nix
