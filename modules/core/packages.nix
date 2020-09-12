@@ -3,6 +3,7 @@
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
   home-manager.users.rafiyq = {
+    home.stateVersion = "20.09";
     home.keyboard.layout = "gb";
     home.homeDirectory = "/home/rafiyq";
     home.packages = with pkgs; [
@@ -17,6 +18,6 @@
       vanilla-dmz
       #yaru-theme
     ];
- 
+    systemd.user.startServices = true;
   };
 }
