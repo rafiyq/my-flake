@@ -1,12 +1,17 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports = [ 
-    ./alacritty.nix
-    ./chromium.nix
-    #./emacs.nix
-    #./firefox.nix
-    ./rofi.nix
-    ./mpv.nix
-  ];
+  home-manager.users.rafiyq = {
+    programs = {
+      alacritty.enable = true;
+      chromium.enable = true;
+      firefox.enable = true;
+      mpv = {
+        enable = true;
+        config = {
+          save-position-on-quit = true;
+          keep-open = true;
+        };
+    };
+  };
 }
