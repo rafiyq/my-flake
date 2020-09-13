@@ -11,9 +11,9 @@
         workspaceAutoBackAndForth = true;
         keybindings =
           let
-            modifier = config.xsession.windowManager.i3.config.modifier;
+            modifier = config.modifier;
           in lib.mkOptionDefault {
-            "''${modifier}+Tab" = "workspace back_and_forth";
+            "${modifier}+Tab" = "workspace back_and_forth";
           };
       };
     };
