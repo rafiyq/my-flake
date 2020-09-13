@@ -9,12 +9,12 @@
         terminal = "alacritty";
         modifier = "Mod4";
         workspaceAutoBackAndForth = true;
-        keybindings =
-          let
-            modifier = config.modifier;
-          in lib.mkOptionDefault {
-            "${modifier}+Tab" = "workspace back_and_forth";
-          };
+        #keybindings =
+        #  let
+        #    modifier = config.modifier;
+        #  in lib.mkOptionDefault {
+        #    "${modifier}+Tab" = "workspace back_and_forth";
+        #  };
       };
     };
   };
