@@ -17,16 +17,14 @@
            else throw "Refusing to build from a dirty Git tree!";
        }
        nixpkgs.nixosModules.notDetected
-       ./hosts/thinkpad-x220/hardware-configuration.nix
+       ./hosts/thinkpad-x220.nix
        ./profiles/base/default.nix
        hardware.nixosModules.lenovo-thinkpad-x220
-       #./profiles/bspwm/default.nix
-       inputs.home.nixosModules.home-manager
-       ./modules/default.nix
-       #./modules/window-managers/bspwm/default.nix
-       #./modules/core/default.nix
-       #./modules/window-managers/bspwm/default.nix
-       ./modules/window-managers/sway/default.nix
+       ./profiles/x11.nix
+       home.nixosModules.home-manager
+       ./modules/core.nix
+       ./modules/misc.nix
+       ./modules/window-managers/i3.nix
       ];
       specialArgs = { inherit inputs; };
     };
