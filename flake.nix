@@ -20,9 +20,11 @@
        ./hosts/thinkpad-x220/hardware-configuration.nix
        ./profiles/base/default.nix
        hardware.nixosModules.lenovo-thinkpad-x220
+       ./profiles/bspwm/default.nix
        inputs.home.nixosModules.home-manager
-       ./modules/core/default.nix
-       ./modules/window-managers/bspwm/default.nix
+       ./modules/default.nix
+       #./modules/core/default.nix
+       #./modules/window-managers/bspwm/default.nix
        #./modules/window-managers/sway/default.nix
       ];
       specialArgs = { inherit inputs; };

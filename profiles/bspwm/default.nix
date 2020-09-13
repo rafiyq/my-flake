@@ -4,6 +4,10 @@
 
 { config, lib, pkgs, ... }: {
   
+  imports = [ 
+    ../x11/default.nix
+  ];
+
   services.xserver = {
     enable = true;
 
