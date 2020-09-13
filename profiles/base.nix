@@ -3,6 +3,7 @@
 {
   # Boot
   boot = {
+    earlyVconsoleSetup = true;
     loader = {
       efi.canTouchEfiVariables = true;
       systemd-boot = {
@@ -33,6 +34,7 @@
     font = "Lat2-Terminus16";
     keyMap = "uk";
   };
+
   time.timeZone = "Asia/Jakarta";
 
   # Power management
@@ -115,10 +117,9 @@
   # Users
   users.users = {
     rafiyq = {
+      isNormalUser = true;
       uid = 1000;
-      home = "/home/rafiyq";
-      createHome = true;
-      shell = pkgs.zsh;
+      shell = "/run/current-system/sw/bin/zsh";
       group = "users";
       extraGroups = [
         "wheel" "disk" "audio" "video" "input" "kvm" "render"
@@ -127,6 +128,11 @@
   };
 
   # System Packages
+  programs = {
+    light.enable = true;
+    dconf.enable = true;
+  };
+
   environment.systemPackages = with pkgs; [];
 
   system.stateVersion = "20.03"; # Did you read the comment?
