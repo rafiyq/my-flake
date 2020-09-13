@@ -18,7 +18,7 @@
        }
        nixpkgs.nixosModules.notDetected
        ./hosts/thinkpad-x220.nix
-       ./profiles/base/default.nix
+       ./profiles/base.nix
        hardware.nixosModules.lenovo-thinkpad-x220
        ./profiles/x11.nix
        home.nixosModules.home-manager
