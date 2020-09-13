@@ -22,8 +22,8 @@
        hardware.nixosModules.lenovo-thinkpad-x220
        inputs.home.nixosModules.home-manager
        ./modules/core/default.nix
-       #./modules/window-managers/bspwm/default.nix
-       ./modules/window-managers/sway/default.nix
+       ./modules/window-managers/bspwm/default.nix
+       #./modules/window-managers/sway/default.nix
       ];
       specialArgs = { inherit inputs; };
     };
