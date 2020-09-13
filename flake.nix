@@ -23,6 +23,7 @@
        ./profiles/bspwm/default.nix
        inputs.home.nixosModules.home-manager
        ./modules/default.nix
+       ./modules/window-managers/bspwm/default.nix
        #./modules/core/default.nix
        #./modules/window-managers/bspwm/default.nix
        #./modules/window-managers/sway/default.nix

@@ -22,8 +22,8 @@
     };
     windowManager.bspwm = {
       enable = true;
-      configFile = (import ../../config/bspwm/bspwmrc);
-      sxhkd.configFile = "${pkgs.bspwm}/share/doc/bspwm/examples/sxhkdrc";
+      #configFile = mutate ../../config/bspwm/bspwmrc;
+      #sxhkd.configFile = "${pkgs.bspwm}/share/doc/bspwm/examples/sxhkdrc";
     };
   };
 }
