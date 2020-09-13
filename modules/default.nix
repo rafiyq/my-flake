@@ -4,6 +4,6 @@
   imports = [ 
     ./core/default.nix
     ./misc/default.nix
-    ./programs/default.nix
+    #./programs/default.nix
   ];
 }
