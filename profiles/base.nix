@@ -47,7 +47,6 @@
   services.logind.lidSwitch = "suspend";
   
   # Fn keys
-  programs.light.enable = true;
   services.actkbd = {
     enable = true;
     bindings = [
