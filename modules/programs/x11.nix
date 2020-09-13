@@ -12,6 +12,7 @@
           save-position-on-quit = true;
           keep-open = true;
         };
+      };
     };
   };
 }
