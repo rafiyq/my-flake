@@ -19,11 +19,11 @@
         user = "rafiyq";
       };
       job.logToJournal = true;
-      windowManager.bspwm = {
-        enable = true;
-        configFile = "../../config/bspwm/bspwmrc";
-        sxhkd.configFile = "../../config/bspwm/sxhkdrc";
-      };
+    };
+    windowManager.bspwm = {
+      enable = true;
+      configFile = "../../config/bspwm/bspwmrc";
+      sxhkd.configFile = "../../config/bspwm/sxhkdrc";
     };
   };
 }
