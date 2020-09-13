@@ -24,6 +24,7 @@
        home.nixosModules.home-manager
        ./modules/core.nix
        ./modules/misc.nix
+       ./modules/programs/x11.nix
        ./modules/window-managers/i3.nix
       ];
       specialArgs = { inherit inputs; };
