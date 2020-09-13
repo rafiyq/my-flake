@@ -10,7 +10,7 @@
         modifier = "Mod4";
         workspaceAutoBackAndForth = true;
         keybindings = lib.mkOptionDefault {
-          "${mod}+Tab" = "workspace back_and_forth";
+          "${modifier}+Tab" = "workspace back_and_forth";
         };
       };
     };
