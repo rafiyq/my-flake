@@ -9,9 +9,13 @@
         terminal = "alacritty";
         modifier = "Mod4";
         workspaceAutoBackAndForth = true;
-        keybindings = lib.mkOptionDefault {
-          "${config.modifier}+Tab" = "workspace back_and_forth";
-        };
+        keybindings = ''
+          let
+            modifier = config.xsession.windowManager.i3.config.modifier;
+          in lib.mkOptionDefault {
+            "''${modifier}+Tab" = "workspace back_and_forth";
+          }
+        '';
       };
     };
   };

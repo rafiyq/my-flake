@@ -3,7 +3,6 @@
 {
   # Boot
   boot = {
-    earlyVconsoleSetup = true;
     loader = {
       efi.canTouchEfiVariables = true;
       systemd-boot = {
