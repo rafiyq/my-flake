@@ -20,12 +20,15 @@
        ./hosts/thinkpad-x220.nix
        ./profiles/base.nix
        hardware.nixosModules.lenovo-thinkpad-x220
-       ./profiles/x11.nix
+       #./profiles/x11.nix
+       ./profiles/wayland-sway.nix
        home.nixosModules.home-manager
        ./modules/core.nix
        ./modules/misc.nix
-       ./modules/programs/x11.nix
-       ./modules/window-managers/i3.nix
+       #./modules/programs/x11.nix
+       ./modules/programs/wayland.nix
+       #./modules/window-managers/i3.nix
+       ./modules/window-managers/sway.nix
       ];
       specialArgs = { inherit inputs; };
     };
