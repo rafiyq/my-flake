@@ -14,14 +14,34 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/f0f42992-f3a5-47e7-ae24-87f5b7353d42";
-      fsType = "ext4";
+    { device = "rpool/root";
+      fsType = "zfs";
+    };
+
+  fileSystems."/home" =
+    { device = "rpool/home";
+      fsType = "zfs";
+    };
+
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/7EE9-5987";
+      fsType = "vfat";
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/a41a7d93-f35f-446e-b31d-63b56e734e64"; }
+    [ { device = "/dev/disk/by-uuid/4ee3d387-57d7-48fc-b8ee-5f23df0a839b"; }
     ];
-
+    
   nix.maxJobs = lib.mkDefault 4;
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
+
+  # Add ZFS support.
+  boot.supportedFilesystems = [ "zfs" ];
+  boot.zfs.requestEncryptionCredentials = true;
+
+  networking.hostId = "2243cd6d";
+
+  # ZFS services
+  services.zfs.autoSnapshot.enable = true;
+  services.zfs.autoScrub.enable = true;
 }
