@@ -2,17 +2,20 @@
 
 {
   # Boot
-  boot = {
-    loader = {
-      efi.canTouchEfiVariables = true;
-      systemd-boot = {
-        enable = true;
-        editor = false;
-      };
-      timeout = lib.mkDefault 1;
-    };
-    tmpOnTmpfs = true;
-  };
+  #boot = {
+  #  loader = {
+  #    efi.canTouchEfiVariables = true;
+  #    systemd-boot = {
+  #      enable = true;
+  #      editor = false;
+  #    };
+  #    timeout = lib.mkDefault 1;
+  #  };
+  #  tmpOnTmpfs = true;
+  #};
+  boot.loader.grub.enable = true;
+  boot.loader.grub.version = 2;
+  boot.loader.grub.device = "/dev/sda"; # or "nodev" for efi only
   
   # Networking
   networking = {
