@@ -11,38 +11,27 @@
   boot.initrd.availableKernelModules = [ "ehci_pci" "ahci" "xhci_pci" "usb_storage" "sd_mod" "sdhci_pci" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
-  boot.kernelParams = [ "elevator=none" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "tank/system/root";
+    { device = "rpool/root";
       fsType = "zfs";
     };
 
-  fileSystems."/var" =
-    { device = "tank/system/var";
-      fsType = "zfs";
-    };
-
-  fileSystems."/nix" =
-    { device = "tank/local/nix";
-      fsType = "zfs";
-    };
-
-  fileSystems."/home/rafiyq" =
-    { device = "tank/users/rafiyq";
+  fileSystems."/home" =
+    { device = "rpool/home";
       fsType = "zfs";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/FEF0-2888";
+    { device = "/dev/disk/by-uuid/7EE9-5987";
       fsType = "vfat";
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/bab865b8-d33c-4362-938b-4993dcb009f1"; }
+    [ { device = "/dev/disk/by-uuid/4ee3d387-57d7-48fc-b8ee-5f23df0a839b"; }
     ];
-  
+    
   nix.maxJobs = lib.mkDefault 4;
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
 
@@ -50,10 +39,9 @@
   boot.supportedFilesystems = [ "zfs" ];
   boot.zfs.requestEncryptionCredentials = true;
 
-  networking.hostId = "deae18ef";
+  networking.hostId = "2243cd6d";
 
   # ZFS services
   services.zfs.autoSnapshot.enable = true;
   services.zfs.autoScrub.enable = true;
-
 }
