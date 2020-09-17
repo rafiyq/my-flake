@@ -7,7 +7,7 @@
     hardware.url = "github:NixOS/nixos-hardware";
   };
 
-  outputs = { self, nix, }@inputs: {
+  outputs = { self, nix, ... }@inputs: {
     nixosConfigurations.nixos = inputs.nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
