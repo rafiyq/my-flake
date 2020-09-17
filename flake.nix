@@ -3,35 +3,32 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-20.03";
     unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     home.url = "github:rycee/home-manager/bqv-flakes";
+    emacs.url = "github:nix-community/emacs-overlay";
     hardware.url = "github:NixOS/nixos-hardware";
   };
 
-  outputs = { self, nixpkgs, unstable, home, hardware }@inputs: {
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+  outputs = { self, nix, }@inputs: {
+    nixosConfigurations.nixos = inputs.nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
        { 
+         nixpkgs.overlays = [ inputs.emacs.overlay ];
          system.configurationRevision = 
            if self ? rev
            then self.rev
            else throw "Refusing to build from a dirty Git tree!";
        }
-       nixpkgs.nixosModules.notDetected
-       ./hosts/thinkpad-x220.nix
-       ./profiles/base.nix
-       hardware.nixosModules.lenovo-thinkpad-x220
-       #./profiles/x11.nix
-       ./profiles/wayland-sway.nix
-       home.nixosModules.home-manager
-       ./modules/core.nix
-       ./modules/misc.nix
-       #./modules/programs/x11.nix
-       ./modules/programs/wayland.nix
-       #./modules/window-managers/i3.nix
-       ./modules/window-managers/sway.nix
+
+       inputs.hardware.nixosModules.lenovo-thinkpad-x220
+       (import ./hosts/thinkpad-x220)
+
+       inputs.home.nixosModules.home-manager
+       (import ./modules)
+
+       inputs.nixpkgs.nixosModules.notDetected
       ];
       specialArgs = { inherit inputs; };
     };
-    nixos = self.nixosConfigurations.nixos.config.system.build.toplevel;
+    nixos = inputs.self.nixosConfigurations.nixos.config.system.build.toplevel;
   };
 }

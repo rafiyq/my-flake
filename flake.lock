@@ -1,5 +1,20 @@
 {
   "nodes": {
+    "emacs": {
+      "locked": {
+        "lastModified": 1600301960,
+        "narHash": "sha256-oudVjARgON9JD2cE0UutSo8NimjqIuY1FK7ZG8llZkM=",
+        "owner": "nix-community",
+        "repo": "emacs-overlay",
+        "rev": "cfa069ec7402bd0330869fb9d4430a9803346b0e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "emacs-overlay",
+        "type": "github"
+      }
+    },
     "hardware": {
       "locked": {
         "lastModified": 1598811325,
@@ -36,7 +51,57 @@
         "type": "github"
       }
     },
+    "lowdown-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1598296217,
+        "narHash": "sha256-ha7lyNY1d8m+osmDpPc9f/bfZ3ZC1IVIXwfyklSWg8I=",
+        "owner": "edolstra",
+        "repo": "lowdown",
+        "rev": "c7a4e715af1e233080842db82d15b261cb74cb28",
+        "type": "github"
+      },
+      "original": {
+        "owner": "edolstra",
+        "ref": "no-structs-in-anonymous-unions",
+        "repo": "lowdown",
+        "type": "github"
+      }
+    },
+    "nix": {
+      "inputs": {
+        "lowdown-src": "lowdown-src",
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1600268550,
+        "narHash": "sha256-DAUyHA/o9Q2KzFO/iA/6GBayTulH6siLn2RZtWdZT+M=",
+        "owner": "NixOS",
+        "repo": "nix",
+        "rev": "5080d4e7b2525d1656282c65a217a22ff8381df3",
+        "type": "github"
+      },
+      "original": {
+        "id": "nix",
+        "type": "indirect"
+      }
+    },
     "nixpkgs": {
+      "locked": {
+        "lastModified": 1591633336,
+        "narHash": "sha256-oVXv4xAnDJB03LvZGbC72vSVlIbbJr8tpjEW5o/Fdek=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "70717a337f7ae4e486ba71a500367cad697e5f09",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "ref": "nixos-20.03-small",
+        "type": "indirect"
+      }
+    },
+    "nixpkgs_2": {
       "locked": {
         "lastModified": 1592784995,
         "narHash": "sha256-mj7GnZrzqwiaPf1WQ9HqOJ7eT+NHB1tDNN0mFTlgXzg=",
@@ -54,9 +119,11 @@
     },
     "root": {
       "inputs": {
+        "emacs": "emacs",
         "hardware": "hardware",
         "home": "home",
-        "nixpkgs": "nixpkgs",
+        "nix": "nix",
+        "nixpkgs": "nixpkgs_2",
         "unstable": "unstable"
       }
     },
