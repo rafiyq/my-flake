@@ -17,9 +17,9 @@
       youtube-dl
     ];
     media-packages = with pkgs; [
-      okular
+      #okular
       feh
-      gimp
+      #gimp
       imagemagick
       ffmpeg
       pavucontrol
@@ -33,10 +33,10 @@
       inconsolata
       iosevka
       source-code-pro
-      open-sans # required for telegram app
+      open-sans 
       #unstable.nerdfonts
     ];
-    other-packages = with pkgs; [ tdesktop xfce.thunar gopass ];
+    other-packages = with pkgs; [ ];
     home-packages = dev-packages ++ cli-packages ++ media-packages
       ++ font-packages ++ other-packages;
 
@@ -103,14 +103,14 @@
         "network.proxy.type" = 1;
       };
     };
-    programs.chromium = {
-      enable = true;
-      extensions = [
-        "gcbommkclmclpchllfjekcdonpmejbdp" # https everywhere
-        "cjpalhdlnbpafiamejdnhcphjbkeiagm" # ublock origin
-        "pachckjkecffpdphbpmfolblodfkgbhl" # VidIQ
-      ];
-    };
+    #programs.chromium = {
+    #  enable = true;
+    #  extensions = [
+    #    "gcbommkclmclpchllfjekcdonpmejbdp" # https everywhere
+    #    "cjpalhdlnbpafiamejdnhcphjbkeiagm" # ublock origin
+    #    "pachckjkecffpdphbpmfolblodfkgbhl" # VidIQ
+    #  ];
+    #};
 
     programs.alacritty = {
       enable = true;
