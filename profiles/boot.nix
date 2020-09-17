@@ -6,7 +6,6 @@
 
   boot.kernelPackages = pkgs.unstable.linuxPackages_latest;
   boot.loader = {
-    };
     grub = {
       enable = true;
       version = 2;
