@@ -27,7 +27,7 @@
     font-packages = with pkgs; [
       emacs-all-the-icons-fonts
       corefonts # Micrsoft free fonts
-      unstable.font-awesome
+      #unstable.font-awesome
       fira-code
       hack-font
       inconsolata
