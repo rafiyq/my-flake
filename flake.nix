@@ -23,7 +23,7 @@
        (import ./hosts/thinkpad-x220)
 
        inputs.home.nixosModules.home-manager
-       (import ./modules)
+       (import ./modules/home.nix)
 
        inputs.nixpkgs.nixosModules.notDetected
       ];
