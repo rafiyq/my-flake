@@ -6,20 +6,12 @@
 
   boot.kernelPackages = pkgs.unstable.linuxPackages_latest;
   boot.loader = {
-    # systemd-boot.enable = true;
-    efi = {
-      canTouchEfiVariables = true;
-      # efiSysMountPoint = "/boot/efi"; # it's boot now
     };
     grub = {
       enable = true;
       version = 2;
-      efiSupport = true;
       # efiInstallAsRemovable = true;
-      device = "nodev";
-      enableCryptodisk = true;
-      gfxmodeEfi = "1024x768";
-      useOSProber = true;
+      device = "/dev/sda";
     };
   };
   

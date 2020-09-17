@@ -2,14 +2,11 @@
 
 {
   imports = [
-    ../../default.nix
     ./configuration.nix
+    ../../profiles/boot.nix
+    ../../profiles/configuration.nix
+    ../../profiles/fonts.nix
+    ../../profiles/xserver.nix
+    ../../profiles/users.nix
   ];
-
-  # rde = {
-  #   username = "abcdw";
-  #   zsh.enable = true;
-  #   i3.enable = true;
-  # };
-
 }
