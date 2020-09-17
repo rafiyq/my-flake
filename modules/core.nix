@@ -4,11 +4,11 @@
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
   home-manager.users.rafiyq = {
-        # Emacs
-    programs.emacs = {
-      enable = true;
-      #package = pkgs.emacsGit;
-    };
+    # Emacs
+   # programs.emacs = {
+   #   enable = true;
+   #   #package = pkgs.emacsGit;
+   # };
 
     # Git
     programs.git = {
@@ -84,7 +84,7 @@
       #cli
       wget curl htop
       unrar unzip zip
-      sshfs cifs-utils ms-sys ntfs3g
+     # sshfs cifs-utils ms-sys ntfs3g
       gptfdisk parted
       aria2 youtube-dl
 

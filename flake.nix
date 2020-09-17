@@ -47,10 +47,10 @@
           }
 
           inputs.hardware.nixosModules.lenovo-thinkpad-x220
-          (import ./hosts/thinkpad-x220)
+          (import ./hosts/nixos)
 
           inputs.home.nixosModules.home-manager
-          (import ./modules/home.nix)
+          (import ./modules/core.nix)
 
           inputs.nixpkgs.nixosModules.notDetected
           hm-nixos-as-super
