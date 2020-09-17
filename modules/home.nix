@@ -34,7 +34,7 @@
       iosevka
       source-code-pro
       open-sans # required for telegram app
-      unstable.nerdfonts
+      #unstable.nerdfonts
     ];
     other-packages = with pkgs; [ tdesktop xfce.thunar gopass ];
     home-packages = dev-packages ++ cli-packages ++ media-packages
