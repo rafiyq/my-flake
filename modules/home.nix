@@ -25,8 +25,8 @@
       pavucontrol
     ];
     font-packages = with pkgs; [
-      emacs-all-the-icons-fonts
-      corefonts # Micrsoft free fonts
+     # emacs-all-the-icons-fonts
+      #corefonts # Micrsoft free fonts
       #unstable.font-awesome
       fira-code
       hack-font
@@ -65,10 +65,10 @@
       templates = "${home.homeDirectory}/templates";
     };
 
-    programs.emacs = {
-      enable = true;
-      package = pkgs.emacsGit;
-    };
+    #programs.emacs = {
+    #  enable = true;
+    #  package = pkgs.emacsGit;
+    #};
 
     programs.mpv = {
       enable = true;
@@ -223,10 +223,10 @@
         }];
       };
     };
-    services.random-background = {
-      enable = true;
-      imageDirectory = "${xdg.userDirs.pictures}/wallpapers";
-    };
+    #services.random-background = {
+    #  enable = true;
+    #  imageDirectory = "${xdg.userDirs.pictures}/wallpapers";
+    #};
     services.network-manager-applet.enable = true;
 
     programs.zsh = {
