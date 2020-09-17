@@ -4,7 +4,7 @@
 
 { config, lib, pkgs, inputs, ... }: {
 
-  boot.kernelPackages = pkgs.unstable.linuxPackages_latest;
+  #boot.kernelPackages = pkgs.unstable.linuxPackages_latest;
   boot.loader = {
     grub = {
       enable = true;
