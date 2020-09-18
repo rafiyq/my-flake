@@ -51,10 +51,6 @@
         }];
       };
     };
-    services.random-background = {
-      enable = true;
-      imageDirectory = "${xdg.userDirs.pictures}/wallpapers";
-    };
     services.network-manager-applet.enable = true;
   };
 }
