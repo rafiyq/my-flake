@@ -1,24 +1,6 @@
 { config, lib, pkgs, ... }:
 
 {
-  # Boot
-  #boot = {
-  #  loader = {
-  #    efi.canTouchEfiVariables = true;
-  #    systemd-boot = {
-  #      enable = true;
-  #      editor = false;
-  #    };
-  #    timeout = lib.mkDefault 1;
-  #  };
-  #  tmpOnTmpfs = true;
-  #};
-
-  # Grub
-  boot.loader.grub.enable = true;
-  boot.loader.grub.version = 2;
-  boot.loader.grub.device = "/dev/sda"; # or "nodev" for efi only
-  
   # Networking
   networking = {
     hostName = "nixos";
@@ -39,7 +21,6 @@
     keyMap = "uk";
   };
 
-  time.timeZone = "Asia/Jakarta";
 
   # Power management
   services.tlp.enable = true;
@@ -51,6 +32,7 @@
   services.logind.lidSwitch = "suspend";
   
   # Fn keys
+  programs.light.enable = true;
   services.actkbd = {
     enable = true;
     bindings = [
@@ -89,54 +71,4 @@
     };
   };
 
-  # Fonts
-  fonts = {
-    enableFontDir = true;
-    enableGhostscriptFonts = true;
-    fonts = with pkgs; [
-      ubuntu_font_family
-      dejavu_fonts
-      fira-code fira-code-symbols
-      noto-fonts noto-fonts-cjk
-      font-awesome-ttf
-    ];
-    fontconfig.defaultFonts = {
-      monospace = [ "Fira Code" ];
-      sansSerif = [ "Ubuntu" ];
-    };
-  };
-
-  # Nix
-  nixpkgs.config.allowUnfree = true;
-  nix = {
-    allowedUsers = [ "@wheel" ];
-    trustedUsers = [ "root" "@wheel" ];
-    package = pkgs.nixUnstable;
-    extraOptions = ''
-      experimental-features = nix-command flakes
-    '';
-  };
-
-  # Users
-  users.users = {
-    rafiyq = {
-      isNormalUser = true;
-      uid = 1000;
-      shell = "/run/current-system/sw/bin/zsh";
-      group = "users";
-      extraGroups = [
-        "wheel" "disk" "audio" "video" "input" "kvm" "render"
-      ];
-    };
-  };
-
-  # System Packages
-  programs = {
-    light.enable = true;
-    dconf.enable = true;
-  };
-
-  environment.systemPackages = with pkgs; [];
-
-  system.stateVersion = "20.03"; # Did you read the comment?
 }
