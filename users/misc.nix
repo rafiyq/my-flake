@@ -26,7 +26,7 @@
     xdg = {
       enable = true;
       userDirs.enable = true; 
-      mimeApps.enabel = true;
+      mimeApps.enable = true;
     };
   };
 }
