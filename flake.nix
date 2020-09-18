@@ -23,7 +23,12 @@
        (import ./hosts/nixos)
 
        inputs.home.nixosModules.home-manager
-       (import ./modules/core.nix)
+       (import ./users/home.nix)
+       (import ./users/misc.nix)
+       (import ./users/programs/core.nix)
+       (import ./users/programs/x11.nix)
+       (import ./users/services.nix)
+       (import ./users/window-managers/i3.nix)
 
        inputs.nixpkgs.nixosModules.notDetected
       ];

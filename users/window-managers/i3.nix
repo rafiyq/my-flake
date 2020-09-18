@@ -1,6 +1,5 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, ... }: {
 
-{
   home-manager.users.rafiyq = {
     xsession.enable = true;
     xsession.windowManager.i3 = rec {

@@ -5,7 +5,7 @@
     displayManager.lightdm.enable = true;
     displayManager.lightdm.autoLogin = {
       enable = true;
-      user = "abcdw";
+      user = "rafiyq";
     };
     displayManager.session = [{
       manage = "desktop";
