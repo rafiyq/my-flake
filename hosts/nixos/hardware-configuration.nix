@@ -4,9 +4,9 @@
 { config, lib, pkgs, ... }:
 
 {
-  #imports =
-  #  [ <nixpkgs/nixos/modules/installer/scan/not-detected.nix>
-  #  ];
+  imports =
+    [ <nixpkgs/nixos/modules/installer/scan/not-detected.nix>
+    ];
 
   boot.initrd.availableKernelModules = [ "ehci_pci" "ahci" "xhci_pci" "usb_storage" "sd_mod" "sdhci_pci" ];
   boot.initrd.kernelModules = [ ];
@@ -14,7 +14,7 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/60bf9589-58a3-4bd4-89e6-c2130cde4a4e";
+    { device = "/dev/disk/by-uuid/1963345d-5d7c-40c3-b75c-b34d7b8f9de7";
       fsType = "ext4";
     };
 

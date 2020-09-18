@@ -1,26 +1,10 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, inputs ... }: {
 
-{
   # Networking
-  networking = {
-    hostName = "nixos";
-    networkmanager.enable = true;
-    firewall.enable = true;
-    useDHCP = false;
-    interfaces = {
-      enp0s25.useDHCP = true;
-      wlp3s0.useDHCP = true;
-    };
-  };
+  networking.networkmanager.enable = true;
 
   # Console
-  i18n.defaultLocale = "en_US.UTF-8";
-  console = {
-    earlySetup = true;
-    font = "Lat2-Terminus16";
-    keyMap = "uk";
-  };
-
+  console.earlySetup = true;
 
   # Power management
   services.tlp.enable = true;
