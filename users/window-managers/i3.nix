@@ -36,9 +36,9 @@
           "${mod}+Print" = ''
             exec ${pkgs.maim}/bin/maim | \
             ${pkgs.xclip}/bin/xclip -selection clipboard -t image/png'';
-          "Ctrl+${mod}+Print" = ''
-            exec mkdir -p ${xdg.userDirs.pictures}/shots && \
-            ${pkgs.maim}/bin/maim ${xdg.userDirs.pictures}/shots/$(date +%FT%R:%S).png'';
+          #"Ctrl+${mod}+Print" = ''
+          #  exec mkdir -p ${xdg.userDirs.pictures}/shots && \
+          #  ${pkgs.maim}/bin/maim ${xdg.userDirs.pictures}/shots/$(date +%FT%R:%S).png'';
         };
         bars = [{
           position = "top";
