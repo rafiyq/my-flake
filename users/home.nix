@@ -8,6 +8,7 @@
     packages = with pkgs; [
       #cli
       wget curl
+      dconf
       htop
       p7zip
       #sshfs cifs-utils ms-sys ntfs3g
