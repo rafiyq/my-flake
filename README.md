@@ -34,3 +34,4 @@ mkdir /mnt/nix /mnt/var /mnt/home
 mount -t zfs tank/system/var /mnt/var
 mount -t zfs tank/local/nix /mnt/nix
 mount -t zfs tank/user/home /mnt/home
+head -c 8 /etc/machine-id

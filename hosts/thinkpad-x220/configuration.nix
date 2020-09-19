@@ -20,6 +20,7 @@
   # boot.loader.grub.device = "/dev/sda"; # or "nodev" for efi only
 
   networking.hostName = "thinkpad-x220"; # Define your hostname.
+  networking.hostId = "41c4ff4e";
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # The global useDHCP flag is deprecated, therefore explicitly set to false here.
