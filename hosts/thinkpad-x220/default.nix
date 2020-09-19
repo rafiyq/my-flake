@@ -8,6 +8,6 @@
     ../../modules/nix-unstable.nix
     ../../modules/users.nix
     ../../modules/fonts.nix
-    ../../modules/xserver.nix
+    ../../modules/sway.nix
   ];
 }
