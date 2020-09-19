@@ -20,15 +20,15 @@
        }
 
        inputs.hardware.nixosModules.lenovo-thinkpad-x220
-       (import ./hosts/nixos)
+       (import ./hosts/thinkpad-x220)
 
        inputs.home.nixosModules.home-manager
        (import ./users/home.nix)
        (import ./users/misc.nix)
        (import ./users/programs/core.nix)
-       (import ./users/programs/x11.nix)
+       (import ./users/programs/wayland.nix)
        (import ./users/services.nix)
-       (import ./users/window-managers/i3.nix)
+       (import ./users/window-managers/sway.nix)
 
        inputs.nixpkgs.nixosModules.notDetected
       ];
