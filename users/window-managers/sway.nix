@@ -36,7 +36,7 @@
         menu = "${pkgs.wofi}/bin/wofi --insensitive --show drun";
         terminal = "${pkgs.termite}/bin/termite";
         window.titlebar = true;
-        window.border = 4;
+        window.border = 0;
         input = {
           "2:7:SynPS/2_Synaptics_TouchPad" = {
             click_method = "clickfinger";
@@ -45,7 +45,7 @@
             scroll_method = "two_finger";
             natural_scroll = "enabled";
             #accel_profile = "adaptive";
-            pointer_accel = "0.5";
+            #pointer_accel = "0.5";
           };
           "1:1:AT_Translated_Set_2_keyboard" = { xkb_layout = "gb"; };
         };
