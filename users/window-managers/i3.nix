@@ -4,12 +4,9 @@
     xsession.enable = true;
     xsession.windowManager.i3 = rec {
       enable = true;
-      # Also disables titlebars https://rycee.gitlab.io/home-manager/options.html#opt-xsession.windowManager.i3.config.window.titlebar
-      package = pkgs.i3-gaps;
       config = {
         terminal = "alacritty";
         modifier = "Mod4";
-        menu = "rofi -show run";
         # gaps.smartBorders = "on";
         workspaceAutoBackAndForth = true;
         # TODO: revisit and cleanup hotkeys
